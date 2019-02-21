@@ -10,22 +10,28 @@ import WineSuggestionResult from './components/WineSuggestionResult.js';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div>
-          <Title/>
-        </div>
-        <div>
-          <Description/>
-        </div>
-        <div>
-          <Picture/><DropDownMenu/><GoButton/>
-        <div>
-        <WineSuggestionResult/>
-        </div>
-        </div>
-      </div>
-    );
-  }
-}
+      <div>
 
-export default App;
+      <div>
+          <Title />
+        </div>
+       
+        <div>
+          <Description />
+        </div>
+       
+        <div class="row">
+          <div class="col-sm-4" ><Picture />
+          </div>
+          <div class="col-sm-4" ><DropDownMenu />
+          </div>
+          <div class="col-sm-4" ><GoButton />
+          </div>
+        </div>
+</div>
+
+        );
+      }
+    }
+    
+    export default App;
