@@ -1,4 +1,4 @@
-Heather Lewis Emma Walker
+Heather Lewis Emma Walker Caroline Chisnall
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
