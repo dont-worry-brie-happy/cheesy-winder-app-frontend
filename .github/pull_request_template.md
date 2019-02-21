@@ -1,10 +1,12 @@
-#CWINDER000: Making it cheesy!
+# Making it cheesy!
 
-## Who's making this change?
+### Name of developer
+
+Name
 
 ## What have you changed?
 
-## Type of change
+### Type of change
 
 Please delete options that are not relevant.
 
@@ -13,7 +15,12 @@ Please delete options that are not relevant.
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] This change requires a documentation update
 
-# How Has This Been Tested?
+### Skills shown:
+
+- [ ] TTD
+- [ ] Pair Programming
+
+### How Has This Been Tested?
 
 Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration
 
