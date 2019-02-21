@@ -1,8 +1,8 @@
 #CWINDER000: Making it cheesy!
 
-# Description
+## Who's making this change?
 
-What have you added or changed?
+## What have you changed?
 
 ## Type of change
 
@@ -19,3 +19,5 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 
 - [ ] Test A
 - [ ] Test B
+
+## NICE WORK PEEPS!
