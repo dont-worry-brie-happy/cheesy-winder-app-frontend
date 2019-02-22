@@ -3,7 +3,9 @@ import React from 'react';
 class GoButton extends React.Component {
 
     render() {
-        return (<p>GoButton</p>);
+        return (
+            <button type="button" class="btn btn-primary">Go Button</button>
+        );
     }
 }
 
