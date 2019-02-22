@@ -8,9 +8,26 @@ import GoButton from './components/GoButton.js';
 import WineSuggestionResult from './components/WineSuggestionResult.js';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      wineSuggestion: ""
+    };
+
+    this.onGoClicked = this.onGoClicked.bind(this)
+  }
+
+//Hardcoded a suggested wine. Passed as a prop to the WineSuggestionResult component
+  onGoClicked() {
+    // alert("Check out that wine suggestion")
+    this.setState ({
+      wineSuggestion: "A Nice Bordeaux"
+    })
+  }
+
   render() {
     return (
-      <div>
+      <div className="container">
 
         <div>
           <Title />
@@ -25,12 +42,12 @@ class App extends Component {
           </div>
           <div class="col-sm-4" ><DropDownMenu />
           </div>
-          <div class="col-sm-4" ><GoButton />
+          <div class="col-sm-4" ><GoButton onGoClicked={this.onGoClicked} />
           </div>
         </div>
 
         <div>
-          <WineSuggestionResult />
+          <WineSuggestionResult wineSuggestion={this.state.wineSuggestion} />
         </div>
       </div>
 
