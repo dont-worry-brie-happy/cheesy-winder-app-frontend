@@ -12,14 +12,14 @@ class App extends Component {
     return (
       <div>
 
-      <div>
+        <div>
           <Title />
         </div>
-       
+
         <div>
           <Description />
         </div>
-       
+
         <div class="row">
           <div class="col-sm-4" ><Picture />
           </div>
@@ -28,10 +28,14 @@ class App extends Component {
           <div class="col-sm-4" ><GoButton />
           </div>
         </div>
-</div>
 
-        );
-      }
-    }
-    
-    export default App;
+        <div>
+          <WineSuggestionResult />
+        </div>
+      </div>
+
+    );
+  }
+}
+
+export default App;
