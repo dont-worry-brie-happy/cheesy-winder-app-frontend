@@ -40,8 +40,17 @@ class App extends Component {
         <div class="row">
           <div class="col-sm-4" ><Picture />
           </div>
-          <div class="col-sm-4" ><DropDownMenu />
-          </div>
+
+          <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Cheese
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Cheese1</a></li>
+    <li><a href="#">Cheese2</a></li>
+    <li><a href="#">Cheese3</a></li>
+    <li><a href="#">Cheese3</a></li>
+  </ul>
+</div>
           <div class="col-sm-4" ><GoButton onGoClicked={this.onGoClicked} />
           </div>
         </div>
