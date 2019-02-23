@@ -1,10 +1,19 @@
 import React from 'react';
 
-class WineSuggestionResult extends React.Component {
+// const wineSuggestion = "A nice Bordeaux"
 
+class WineSuggestionResult extends React.Component {
+//Renders hardcoded WineSuggestion as a prop from App.js when the GoButton is clicked.
     render() {
-        return (<p>WineSuggestionResult</p>);
+        return (
+        <p style={styles}>{this.props.wineSuggestion}</p>
+        );
     }
 }
 
 export default WineSuggestionResult;
+
+const styles = {
+    textAlign : "center",
+    padding: "50px"
+}
