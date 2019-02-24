@@ -11,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      wineSuggestion: ""
+      wineName: ""
     };
 
     this.onGoClicked = this.onGoClicked.bind(this)
@@ -21,7 +21,7 @@ class App extends Component {
   onGoClicked() {
     // alert("Check out that wine suggestion")
     this.setState ({
-      wineSuggestion: "A Nice Bordeaux"
+      wineName: "A Nice Bordeaux"
     })
   }
 
@@ -56,7 +56,7 @@ class App extends Component {
         </div>
 
         <div>
-          <WineSuggestionResult wineSuggestion={this.state.wineSuggestion} />
+          <WineSuggestionResult wineName={this.state.wineName} />
         </div>
       </div>
 
