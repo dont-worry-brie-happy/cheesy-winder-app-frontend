@@ -17,10 +17,10 @@ class App extends Component {
     this.onGoClicked = this.onGoClicked.bind(this)
   }
 
-//Hardcoded a suggested wine. Passed as a prop to the WineSuggestionResult component
+  //Hardcoded a suggested wine. Passed as a prop to the WineSuggestionResult component
   onGoClicked() {
     // alert("Check out that wine suggestion")
-    this.setState ({
+    this.setState({
       wineName: "A Nice Bordeaux"
     })
   }
@@ -41,16 +41,13 @@ class App extends Component {
           <div class="col-sm-4" ><Picture />
           </div>
 
-          <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Cheese
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Cheese1</a></li>
-    <li><a href="#">Cheese2</a></li>
-    <li><a href="#">Cheese3</a></li>
-    <li><a href="#">Cheese3</a></li>
-  </ul>
-</div>
+          <div class="row">
+
+            <div class="col-sm-4" ><DropDownMenu />
+            </div>
+
+          </div>
+
           <div class="col-sm-4" ><GoButton onGoClicked={this.onGoClicked} />
           </div>
         </div>
