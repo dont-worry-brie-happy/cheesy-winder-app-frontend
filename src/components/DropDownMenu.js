@@ -1,28 +1,46 @@
 import React from 'react';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import cheeseMenuItem from './CheeseMenuItem.js';
 
-class DropDownMenu extends React.Component {
-    constructor() {
-        super();
+class DropDownCheeseMenu extends React.Component {
+    constructor(props) {
+        super(props);
 
+        this.toggle = this.toggle.bind(this);
+        this.select = this.select.bind(this);
         this.state = {
-            showCheese: false,
+            dropdownOpen: false,
+            cheeseName: ["brie", "limberger", "camembert"],
+            // cheeseArray: [,
+            //     {
+            //         cheeseName: brie,
+            //         cheeseId: 1
+            //     },
+            //     {
+            //         cheeseName: brie,
+            //         cheeseId: 2
+            //     },
+            //     {
+            //         cheeseName: brie,
+            //         cheeseId: 3
+            //     }],
+
+            value:"Cheese"
         };
 
-        this.showCheese = this.showCheese.bind(this);
-        this.closeCheese = this.closeCheese.bind(this);
-
     }
 
-    showCheese(event) {
-        event.preventDefault();
-
-        this.setState({ showCheese: true }, () => {
-            document.addEventListener('click', this.closeCheese);
-        });
+    toggle() {
+        this.setState(prevState => ({
+            dropdownOpen: !prevState.dropdownOpen
+        }));
+    }
+    select(event) {
+        this.setState({
+        value: event.target.innerText
+      })
     }
 
-
-    closeCheese(event) {
 
         if (!this.dropdownMenu.contains(event.target)) {
       
@@ -34,33 +52,20 @@ class DropDownMenu extends React.Component {
         }
   
     render() {
-      return (
-        <div>
-          <button onClick={this.showCheese}>
-             Cheese
-          </button>
-          
-          {
-            this.state.showCheese
-              ? (
-                <div
-                  className="menu"
-                  ref={(element) => {
-                    this.dropdownMenu = element;
-                  }}
-                >
-                  <button> Cheese 1 </button>
-                  <button> Cheese 2 </button>
-                  <button> Cheese 3 </button>
-                  <button> Cheese 4 </button>
-                </div>
-              )
-              : (
-                null
-              )
-          }
-        </div>
-      );
+
+        return (
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                <DropdownToggle caret>
+                    {this.state.value}
+                </DropdownToggle>
+                <DropdownMenu>
+                    {this.state.cheeseName.map(cheese => (
+                        <DropdownItem onClick={this.select}>{cheese}</DropdownItem>
+                    ))}
+                </DropdownMenu>
+            </Dropdown>
+        );
     }
-  }
-export default DropDownMenu;
+}
+
+export default DropDownCheeseMenu;
