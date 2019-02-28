@@ -22,12 +22,16 @@ class DropDownMenu extends React.Component {
     }
 
 
-    closeCheese() {
-        this.setState({ showCheese: false }, () => {
-            document.removeEventListener('click', this.closeCheese);
-        });
-    
-    }
+    closeCheese(event) {
+
+        if (!this.dropdownMenu.contains(event.target)) {
+      
+            this.setState({ showCheese: false }, () => {
+              document.removeEventListener('click', this.closeCheese);
+            });  
+            
+          }
+        }
   
     render() {
       return (
