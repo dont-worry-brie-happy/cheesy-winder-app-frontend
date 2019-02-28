@@ -1,10 +1,11 @@
 import React from 'react';
+import thinkingman from '../images/thinkingman.png'
 
 class Picture extends React.Component {
 
     render() {
         return (
-        <p>Image of man thinking. What should I pair with?</p>
+        <img src={thinkingman}></img>
         );
     }
 }
