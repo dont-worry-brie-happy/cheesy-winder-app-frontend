@@ -2,7 +2,7 @@ import React from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import cheeseMenuItem from './CheeseMenuItem.js';
 
-export default class Example extends React.Component {
+class DropDownCheeseMenu extends React.Component {
     constructor(props) {
         super(props);
 
@@ -27,6 +27,7 @@ export default class Example extends React.Component {
 
             value:"Cheese"
         };
+
     }
 
     toggle() {
@@ -40,7 +41,18 @@ export default class Example extends React.Component {
       })
     }
 
+
+        if (!this.dropdownMenu.contains(event.target)) {
+      
+            this.setState({ showCheese: false }, () => {
+              document.removeEventListener('click', this.closeCheese);
+            });  
+            
+          }
+        }
+  
     render() {
+
         return (
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <DropdownToggle caret>
@@ -55,3 +67,5 @@ export default class Example extends React.Component {
         );
     }
 }
+
+export default DropDownCheeseMenu;
