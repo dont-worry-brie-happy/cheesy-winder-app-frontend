@@ -36,41 +36,22 @@ export default class Example extends React.Component {
     }
     select(event) {
         this.setState({
-          dropdownOpen: !this.state.dropdownOpen,
-          value: event.target.innerText
-        });
-      }
+        value: event.target.innerText
+      })
+    }
 
     render() {
         return (
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <DropdownToggle caret>
                     {this.state.value}
-        </DropdownToggle>
+                </DropdownToggle>
                 <DropdownMenu>
                     {this.state.cheeseName.map(cheese => (
-                        <DropdownItem onclick={this.select}>{cheese}</DropdownItem>
+                        <DropdownItem onClick={this.select}>{cheese}</DropdownItem>
                     ))}
                 </DropdownMenu>
             </Dropdown>
         );
     }
 }
-// render() {
-//     return (
-//         <Dropdown className="container" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-//         <span
-//           onClick={this.toggle}
-//           data-toggle="dropdown"
-//           aria-haspopup="true"
-//           aria-expanded={this.state.dropdownOpen}
-//         >{this.state.value}
-//         </span>
-//         <DropdownMenu>
-//           <div onClick={this.select}>Work</div>
-//           <div onClick={this.select}>Contact</div>
-//         </DropdownMenu>
-//       </Dropdown>
-//     );
-//   }
-// }
