@@ -3,7 +3,7 @@ import './App.css';
 import Title from './components/Title.js';
 import Description from './components/Description.js';
 import Picture from './components/Picture.js';
-import DropDownMenu from './components/DropDownMenu.js';
+import DropDownCheeseMenu from './components/DropDownMenu.js';
 import GoButton from './components/GoButton.js';
 import WineSuggestionResult from './components/WineSuggestionResult.js';
 
@@ -43,7 +43,7 @@ class App extends Component {
 
           <div class="row">
 
-            <div class="col-sm-4" ><DropDownMenu />
+            <div class="col-sm-4" ><DropDownCheeseMenu/>
             </div>
 
           </div>
