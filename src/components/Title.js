@@ -3,7 +3,9 @@ import React from 'react';
 class Title extends React.Component {
 
     render() {
+ 
         return (<h1 style={styles.header}> CHINDER </h1>);
+
     }
 }
 
@@ -20,3 +22,4 @@ const styles = {
 
 
 export default Title;
+
