@@ -26,6 +26,7 @@ class DropDownCheeseMenu extends React.Component {
 
             value:"Cheese"
         };
+
     }
 
     toggle() {
@@ -39,7 +40,18 @@ class DropDownCheeseMenu extends React.Component {
       })
     }
 
+
+        if (!this.dropdownMenu.contains(event.target)) {
+      
+            this.setState({ showCheese: false }, () => {
+              document.removeEventListener('click', this.closeCheese);
+            });  
+            
+          }
+        }
+  
     render() {
+
         return (
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <DropdownToggle caret>
@@ -54,4 +66,5 @@ class DropDownCheeseMenu extends React.Component {
         );
     }
 }
+
 export default DropDownCheeseMenu;
