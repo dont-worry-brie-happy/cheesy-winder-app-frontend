@@ -1,8 +1,7 @@
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import cheeseMenuItem from './CheeseMenuItem.js';
 
-export default class Example extends React.Component {
+class DropDownCheeseMenu extends React.Component {
     constructor(props) {
         super(props);
 
@@ -55,3 +54,4 @@ export default class Example extends React.Component {
         );
     }
 }
+export default DropDownCheeseMenu;
