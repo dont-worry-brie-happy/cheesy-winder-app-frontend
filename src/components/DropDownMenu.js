@@ -42,14 +42,6 @@ class DropDownCheeseMenu extends React.Component {
     }
 
 
-        if (!this.dropdownMenu.contains(event.target)) {
-      
-            this.setState({ showCheese: false }, () => {
-              document.removeEventListener('click', this.closeCheese);
-            });  
-            
-          }
-        }
   
     render() {
 
