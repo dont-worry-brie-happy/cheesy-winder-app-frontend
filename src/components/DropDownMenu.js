@@ -10,7 +10,7 @@ class DropDownCheeseMenu extends React.Component {
         this.select = this.select.bind(this);
         this.state = {
             dropdownOpen: false,
-            cheeseName: ["brie", "limberger", "camembert"],
+            // cheeseName: ["brie", "limberger", "camembert"],
             // cheeseArray: [,
             //     {
             //         cheeseName: brie,
@@ -51,7 +51,7 @@ class DropDownCheeseMenu extends React.Component {
                     {this.state.value}
                 </DropdownToggle>
                 <DropdownMenu>
-                    {this.state.cheeseName.map(cheese => (
+                    {this.props.cheeseName.map(cheese => (
                         <DropdownItem onClick={this.select}>{cheese}</DropdownItem>
                     ))}
                 </DropdownMenu>

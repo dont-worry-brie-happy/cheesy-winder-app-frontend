@@ -11,7 +11,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      wineName: ""
+      wineName: "",
+      cheeseName: ["brie", "limberger", "camembert"]
     };
 
     this.onGoClicked = this.onGoClicked.bind(this)
@@ -43,7 +44,7 @@ class App extends Component {
 
           <div class="row">
 
-            <div class="col-sm-4" ><DropDownCheeseMenu/>
+            <div class="col-sm-4" ><DropDownCheeseMenu cheeseName={this.state.cheeseName}/>
             </div>
 
           </div>
