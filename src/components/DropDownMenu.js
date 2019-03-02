@@ -12,7 +12,6 @@ class DropDownCheeseMenu extends React.Component {
 
         this.state = {
             dropdownOpen: false,
-            value:"Cheese"
         };
 
     }
@@ -23,7 +22,6 @@ class DropDownCheeseMenu extends React.Component {
         this.setState(prevState => ({
             dropdownOpen: !prevState.dropdownOpen
         }));
-        console.log(this.state.value)
     }
     select(event) {
         // const chosenCheese = event.currentTarget.textContent;
@@ -40,7 +38,7 @@ class DropDownCheeseMenu extends React.Component {
         return (
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <DropdownToggle onClick={this.chooseCheese} caret>
-                    {this.state.value}
+                    {this.props.value}
                 </DropdownToggle>
                 <DropdownMenu>
                     {this.props.cheeseName.map(cheese => (
