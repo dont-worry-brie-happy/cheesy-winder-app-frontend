@@ -12,10 +12,12 @@ class App extends Component {
     super(props);
     this.state = {
       wineName: "",
-      cheeseName: ["brie", "limberger", "camembert"]
+      cheeseName: ["brie", "limberger", "camembert"],
+      chosenCheese:""
     };
 
-    this.onGoClicked = this.onGoClicked.bind(this)
+    this.onGoClicked = this.onGoClicked.bind(this);
+    this.selectCheese = this.selectCheese.bind(this)
   }
 
   //Hardcoded a suggested wine. Passed as a prop to the WineSuggestionResult component
@@ -25,6 +27,14 @@ class App extends Component {
       wineName: "A Nice Bordeaux"
     })
   }
+
+  selectCheese(chosenCheese) {
+    this.setState({
+      chosenCheese: chosenCheese
+    })
+    console.log(this.state.chosenCheese)
+    // alert(this.state.chosenCheese);
+  };
 
   render() {
     return (
@@ -44,7 +54,7 @@ class App extends Component {
 
           <div class="row">
 
-            <div class="col-sm-4" ><DropDownCheeseMenu cheeseName={this.state.cheeseName}/>
+            <div class="col-sm-4" ><DropDownCheeseMenu cheeseName={this.state.cheeseName} selectCheese={this.selectCheese}/>
             </div>
 
           </div>
