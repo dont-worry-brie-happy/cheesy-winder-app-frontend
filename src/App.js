@@ -22,7 +22,7 @@ class App extends Component {
 
   //Hardcoded a suggested wine. Passed as a prop to the WineSuggestionResult component
   onGoClicked() {
-    // alert("Check out that wine suggestion")
+    alert(this.state.chosenCheese)
     this.setState({
       wineName: "A Nice Bordeaux"
     })
@@ -32,8 +32,6 @@ class App extends Component {
     this.setState({
       chosenCheese: chosenCheese
     })
-    console.log(this.state.chosenCheese)
-    // alert(this.state.chosenCheese);
   };
 
   render() {
