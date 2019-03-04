@@ -6,7 +6,9 @@ class WineSuggestionResult extends React.Component {
 //Renders hardcoded WineSuggestion as a prop from App.js when the GoButton is clicked.
     render() {
         return (
+            <div>
         <p style={styles}>{this.props.wineName}</p>
+        </div>
         );
     }
 }

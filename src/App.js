@@ -12,7 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      wineName: "",
+      wineName: [],
       cheeseList: [],
       // cheeseList: ["brie", "limberger", "camembert"],
       value: "Cheese"
@@ -26,25 +26,30 @@ class App extends Component {
 
   async componentDidMount() {
     const cheeses = await WinesService.getCheese();
+    // console.log(cheeses);
     const cheeseList = cheeses.map(cheeses => cheeses.cheeseName);
     this.setState({ cheeseList: cheeseList });
 }
   
-  onGoClicked() {
-    alert(this.state.value)
-    this.setState({
-      wineName: "A Nice Bordeaux",
-      value: "Cheese"
-    })
-  }
-  // async onGoClicked() {
-  //   const wines = await WinesService.getWine(this.state.value)
+  // onGoClicked() {
   //   alert(this.state.value)
   //   this.setState({
-  //     wineName: wines.wineName,
+  //     wineName: "A Nice Bordeaux",
   //     value: "Cheese"
   //   })
   // }
+  async onGoClicked() {
+    let cheeseName = this.state.value
+    const wines = await WinesService.getWine(cheeseName)
+    console.log(wines);
+    const wineList = wines.map(wines => wines.wineName);
+    // alert(this.state.value)
+    this.setState({
+      wineName: wineList,
+      value: "Cheese"
+    })
+    // console.log(this.state.wineName);
+  }
 
   selectCheese(value) {
     this.setState({
