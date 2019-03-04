@@ -10,8 +10,9 @@ class Description extends React.Component {
 
 const styles = {
     h2: {
-        paddingTop: '30px',
-        textAlign: 'center'
+        paddingBottom: '60px',
+        textAlign: 'center',
+        color: 'gold',
 
     }
 }
