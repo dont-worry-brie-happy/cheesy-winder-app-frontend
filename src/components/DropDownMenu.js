@@ -41,8 +41,9 @@ class DropDownCheeseMenu extends React.Component {
                 <DropdownToggle onClick={this.chooseCheese} caret>
                     {this.props.value}
                 </DropdownToggle>
-                <DropdownMenu>
+                <DropdownMenu style={Styles.drop}>
                     {this.props.cheeseList.map(cheese => (
+
                         <DropdownItem onClick={this.select}>{cheese}</DropdownItem>
                     ))}
                 </DropdownMenu>
@@ -51,4 +52,10 @@ class DropDownCheeseMenu extends React.Component {
     }
 }
 
+const Styles = {
+    drop: {
+        paddingRight: '50px',
+        fontColor: 'gold'
+    }
+};
 export default DropDownCheeseMenu;

@@ -17,5 +17,8 @@ export default WineSuggestionResult;
 
 const styles = {
     textAlign : "center",
-    padding: "50px"
+    paddingBottom: "50px",
+    color: "gold",
+    fontSize: "20px"
+    
 }
