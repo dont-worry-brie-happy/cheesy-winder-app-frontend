@@ -1,13 +1,24 @@
 import React from 'react';
-import thinkingman from '../images/thinkingman.png'
+import brie from '../images/brie.png';
 
 class Picture extends React.Component {
 
     render() {
         return (
-        <img src={thinkingman}></img>
+           <img src={brie} width = {500} height = {300}  ></img> 
         );
     }
 }
 
+
+const Styles = {
+
+    picture: {
+        height: '200',
+        width: '200 '
+    }
+
+
+
+};
 export default Picture;
