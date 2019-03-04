@@ -12,43 +12,30 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      wineName: [],
+      wineList: [],
       cheeseList: [],
-      // cheeseList: ["brie", "limberger", "camembert"],
       value: "Cheese"
     };
 
     this.onGoClicked = this.onGoClicked.bind(this);
     this.selectCheese = this.selectCheese.bind(this)
   }
-  //need to include cheeseName = this.state.value
-  //Hardcoded a suggested wine. Passed as a prop to the WineSuggestionResult component
 
   async componentDidMount() {
     const cheeses = await WinesService.getCheese();
-    // console.log(cheeses);
     const cheeseList = cheeses.map(cheeses => cheeses.cheeseName);
     this.setState({ cheeseList: cheeseList });
 }
   
-  // onGoClicked() {
-  //   alert(this.state.value)
-  //   this.setState({
-  //     wineName: "A Nice Bordeaux",
-  //     value: "Cheese"
-  //   })
-  // }
   async onGoClicked() {
     let cheeseName = this.state.value
     const wines = await WinesService.getWine(cheeseName)
     console.log(wines);
-    const wineList = wines.map(wines => wines.wineName);
-    // alert(this.state.value)
+    // const wineList = wines.map(wines => wines.wineName);
     this.setState({
-      wineName: wineList,
+      wineList: wines,
       value: "Cheese"
     })
-    // console.log(this.state.wineName);
   }
 
   selectCheese(value) {
@@ -85,7 +72,7 @@ class App extends Component {
         </div>
 
         <div>
-          <WineSuggestionResult wineName={this.state.wineName} />
+          <WineSuggestionResult wineList={this.state.wineList} />
         </div>
       </div>
 
