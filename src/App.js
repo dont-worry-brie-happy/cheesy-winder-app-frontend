@@ -6,15 +6,15 @@ import Picture from './components/Picture.js';
 import DropDownCheeseMenu from './components/DropDownMenu.js';
 import GoButton from './components/GoButton.js';
 import WineSuggestionResult from './components/WineSuggestionResult.js';
-// import WinesService from './wines/tasks';
+import WinesService from './service/wines';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       wineName: "",
-      // cheeseList: [],
-      cheeseList: ["brie", "limberger", "camembert"],
+      cheeseList: [],
+      // cheeseList: ["brie", "limberger", "camembert"],
       value: "Cheese"
     };
 
@@ -24,11 +24,11 @@ class App extends Component {
   //need to include cheeseName = this.state.value
   //Hardcoded a suggested wine. Passed as a prop to the WineSuggestionResult component
 
-//   async componentDidMount() {
-//     const cheeses = await WinesService.getCheese();
-//     const cheeseList = cheeses.map(cheeses => cheeses.cheeseName);
-//     this.setState({ cheeseList: cheeseList });
-// }
+  async componentDidMount() {
+    const cheeses = await WinesService.getCheese();
+    const cheeseList = cheeses.map(cheeses => cheeses.cheeseName);
+    this.setState({ cheeseList: cheeseList });
+}
   
   onGoClicked() {
     alert(this.state.value)
