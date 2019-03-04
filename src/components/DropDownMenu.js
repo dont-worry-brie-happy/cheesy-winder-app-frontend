@@ -41,7 +41,7 @@ class DropDownCheeseMenu extends React.Component {
                     {this.props.value}
                 </DropdownToggle>
                 <DropdownMenu>
-                    {this.props.cheeseName.map(cheese => (
+                    {this.props.cheeseList.map(cheese => (
                         <DropdownItem onClick={this.select}>{cheese}</DropdownItem>
                     ))}
                 </DropdownMenu>
