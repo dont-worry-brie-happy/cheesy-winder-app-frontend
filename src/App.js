@@ -6,27 +6,49 @@ import Picture from './components/Picture.js';
 import DropDownCheeseMenu from './components/DropDownMenu.js';
 import GoButton from './components/GoButton.js';
 import WineSuggestionResult from './components/WineSuggestionResult.js';
+import WinesService from './service/wines';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      wineName: "",
-      cheeseName: ["brie", "limberger", "camembert"],
-      value:"Cheese"
+      wineName: [],
+      cheeseList: [],
+      // cheeseList: ["brie", "limberger", "camembert"],
+      value: "Cheese"
     };
 
     this.onGoClicked = this.onGoClicked.bind(this);
     this.selectCheese = this.selectCheese.bind(this)
   }
-
+  //need to include cheeseName = this.state.value
   //Hardcoded a suggested wine. Passed as a prop to the WineSuggestionResult component
-  onGoClicked() {
-    alert(this.state.value)
+
+  async componentDidMount() {
+    const cheeses = await WinesService.getCheese();
+    // console.log(cheeses);
+    const cheeseList = cheeses.map(cheeses => cheeses.cheeseName);
+    this.setState({ cheeseList: cheeseList });
+}
+  
+  // onGoClicked() {
+  //   alert(this.state.value)
+  //   this.setState({
+  //     wineName: "A Nice Bordeaux",
+  //     value: "Cheese"
+  //   })
+  // }
+  async onGoClicked() {
+    let cheeseName = this.state.value
+    const wines = await WinesService.getWine(cheeseName)
+    console.log(wines);
+    const wineList = wines.map(wines => wines.wineName);
+    // alert(this.state.value)
     this.setState({
-      wineName: "A Nice Bordeaux",
+      wineName: wineList,
       value: "Cheese"
     })
+    // console.log(this.state.wineName);
   }
 
   selectCheese(value) {
@@ -53,7 +75,7 @@ class App extends Component {
 
           <div class="row">
 
-            <div class="col-sm-4" ><DropDownCheeseMenu cheeseName={this.state.cheeseName} value={this.state.value} selectCheese={this.selectCheese}/>
+            <div class="col-sm-4" ><DropDownCheeseMenu cheeseList={this.state.cheeseList} value={this.state.value} selectCheese={this.selectCheese} />
             </div>
 
           </div>

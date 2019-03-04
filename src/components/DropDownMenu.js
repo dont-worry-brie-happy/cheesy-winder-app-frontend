@@ -2,6 +2,7 @@ import React from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import cheeseMenuItem from './CheeseMenuItem.js';
 
+
 class DropDownCheeseMenu extends React.Component {
     constructor(props) {
         super(props);
@@ -41,7 +42,8 @@ class DropDownCheeseMenu extends React.Component {
                     {this.props.value}
                 </DropdownToggle>
                 <DropdownMenu style={Styles.drop}>
-                    {this.props.cheeseName.map(cheese => (
+                    {this.props.cheeseList.map(cheese => (
+
                         <DropdownItem onClick={this.select}>{cheese}</DropdownItem>
                     ))}
                 </DropdownMenu>
