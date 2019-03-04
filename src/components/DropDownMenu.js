@@ -9,7 +9,6 @@ class DropDownCheeseMenu extends React.Component {
 
         this.toggle = this.toggle.bind(this);
         this.select = this.select.bind(this);
-        // this.chooseCheese = this.chooseCheese.bind(this);
 
         this.state = {
             dropdownOpen: false,
@@ -25,10 +24,7 @@ class DropDownCheeseMenu extends React.Component {
         }));
     }
     select(event) {
-        // const chosenCheese = event.currentTarget.textContent;
-        // this.props.selectCheese(chosenCheese);
         this.setState({
-        // value: event.target.innerText
         value: event.currentTarget.textContent
       })
     }
