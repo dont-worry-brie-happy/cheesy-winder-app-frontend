@@ -15,7 +15,7 @@ class App extends Component {
       wineList: [],
       cheeseList: [],
       value: "Cheese",
-      nameCheese: "your choice of cheese"
+      nameCheese: ""
     };
 
     this.onGoClicked = this.onGoClicked.bind(this);
