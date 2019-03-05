@@ -1,6 +1,22 @@
 Heather Lewis Emma Walker Caroline Chisnall
 
+Use the 'Don't Worry Brie Happy' app to find the perfect wine to go with your choice of cheese!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Dependencies
+
+### 'ReactStrap'
+
+npm install --save reactstrap react react-dom
+
+### 'Axios'
+
+npm install axios
+
+### 'Node'
+
+npm install npm@latest -g
 
 ## Available Scripts
 
