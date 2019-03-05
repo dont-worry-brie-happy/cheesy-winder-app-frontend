@@ -10,7 +10,7 @@ class WineSuggestionResult extends React.Component {
 
                 <div style={Cheesestyles}>
                     {
-                            <h3>Pairing suggestion for {this.props.nameCheese} </h3>
+                            <h3>{this.props.nameCheese === "" ? "" : this.props.nameCheese + " goes well with..."}</h3>
                         }
                 </div>
                 <div style={Winestyles}>
