@@ -12,9 +12,17 @@ class GoButton extends React.Component {
 }
     render() {
         return (
-            <button type="button" class="btn btn-primary" onClick={this.onGoClicked}>Go Button</button>
+            <button type="button" class="btn btn-danger" style={styles.goButton}onClick={this.onGoClicked}>Wine?</button>
         );
     }
 }
 
+const styles = {
+goButton :     {
+    color: "black",
+    fontWeight: "bold"
+}
+
+
+}
 export default GoButton;

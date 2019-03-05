@@ -4,7 +4,7 @@ class Title extends React.Component {
 
     render() {
  
-        return (<h1 style={styles.header}> Needs A Title </h1>);
+        return (<h1 style={styles.header}> Dont Worry Brie Happy  </h1>);
 
     }
 }
