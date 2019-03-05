@@ -153,6 +153,19 @@ INSERT INTO Wine (
     "Red",
     4);
 
+    INSERT INTO Wine  
+        wineId, 
+        wineName, 
+        wineDescription, 
+        wineType,  
+        cheeseId) 
+        VALUES ( 
+        5, 
+        "Chardonnay", 
+        "New Zealand Marlborough region wine. Oaky,complex flavour", 
+        "White", 
+        1);
+
 SELECT * FROM Cheese;
 +----------+----------------+------------+---------------------------------------------------------------------------------------+
 | cheeseId | cheeseName     | cheeseType | cheeseDescription                                                                     |
@@ -171,4 +184,5 @@ SELECT * FROM Wine;
 |      2 | Prosecco    | Sparkling | Dry Italian white wine, delicate fruit and enticing aromatics, lots of bubbles (spumante) |        2 |
 |      3 | Sauternes   | Red       | French Red                                                                                |        3 |
 |      4 | Tempranillo | Red       | Full-bodied red wine from Spain                                                           |        4 |
+|      5 | Chardonnay  | White     | New Zealand Marlborough region wine. Oaky,complex flavour                                 |        1 |
 +--------+-------------+-----------+-------------------------------------------------------------------------------------------+----------+

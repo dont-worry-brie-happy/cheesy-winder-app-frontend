@@ -14,7 +14,8 @@ class App extends Component {
     this.state = {
       wineList: [],
       cheeseList: [],
-      value: "Cheese"
+      value: "Cheese",
+      nameCheese: "your choice of cheese"
     };
 
     this.onGoClicked = this.onGoClicked.bind(this);
@@ -34,7 +35,8 @@ class App extends Component {
     // const wineList = wines.map(wines => wines.wineName);
     this.setState({
       wineList: wines,
-      value: "Cheese"
+      value: "Cheese",
+      nameCheese: this.state.value
     })
   }
 
@@ -72,7 +74,7 @@ class App extends Component {
         </div>
 
         <div>
-          <WineSuggestionResult wineList={this.state.wineList} />
+          <WineSuggestionResult wineList={this.state.wineList} nameCheese={this.state.nameCheese} />
         </div>
       </div>
 
